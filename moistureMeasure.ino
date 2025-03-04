@@ -15,9 +15,9 @@ int readSensor() {
 }
 
 void loop() {
-  int currentSensorValue = readSensor();
-  if (currentSensorValue < 102) {
-    int outputValue = map(currentSensorValue, 0, 102, 255, 0);
+int currentSensorValue = readSensor();
+  if (currentSensorValue < 1023) { // currentSensorValue < 102
+    int outputValue = map(currentSensorValue, 0, 1023, 255, 0); // currentSensorValue < 102
     analogWrite(ledPin, outputValue);
   } else {
     analogWrite(ledPin, 0);
